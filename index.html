@@ -1,13 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/main.css">
-    <title>Document</title>
+  <title>Простой калькулятор</title>
 </head>
 <body>
 
+<input type="text" id="num1">
+<input type="text" id="num2">
+<button onclick="сложить()">Сложить</button>
+<button onclick="вычесть()">Вычесть</button>
+<button onclick="умножить()">Умножить</button>
+<button onclick="разделить()">Разделить</button>
+
+<p id="результат"></p>
+
+<script>
+function сложить() {
+  let num1 = parseFloat(document.getElementById("num1").value);
+  let num2 = parseFloat(document.getElementById("num2").value);
+  document.getElementById("результат").innerText = "Результат: " + (num1 + num2);
+}
+
+function вычесть() {
+  let num1 = parseFloat(document.getElementById("num1").value);
+  let num2 = parseFloat(document.getElementById("num2").value);
+  document.getElementById("результат").innerText = "Результат: " + (num1 - num2);
+}
+
+function умножить() {
+  let num1 = parseFloat(document.getElementById("num1").value);
+  let num2 = parseFloat(document.getElementById("num2").value);
+  document.getElementById("результат").innerText = "Результат: " + (num1 * num2);
+}
+
+function разделить() {
+  let num1 = parseFloat(document.getElementById("num1").value);
+  let num2 = parseFloat(document.getElementById("num2").value);
+  if (num2 !== 0) {
+    document.getElementById("результат").innerText = "Результат: " + (num1 / num2);
+  } else {
+    document.getElementById("результат").innerText = "На ноль делить нельзя";
+  }
+}
+</script>
 
 </body>
 </html>
